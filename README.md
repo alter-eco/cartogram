@@ -1,1 +1,1 @@
-# choropleth
+# cartogram
