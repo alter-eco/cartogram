@@ -14,9 +14,10 @@
   "author": "laurencedorman",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^15.2.0"
+    "browserify": "^16.1.0"
   },
   "dependencies": {
-    "@alter-eco/choropleth": "0.0.8"
+    "@alter-eco/choropleth": "0.0.9",
+    "eventablejs": "^1.0.5"
   }
 }

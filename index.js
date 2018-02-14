@@ -1,10 +1,27 @@
 var Cartogram;
 
 var Choropleth = require('@alter-eco/choropleth');
+var eventablejs = require('eventablejs');
 
 module.exports = Cartogram = {
   create: function() {
-    var instance = Object.assign({}, this.prototype);
+    var instance = Object.assign({}, eventablejs, this.prototype);
+
+    Object.keys(this.prototype).forEach(function(methodName) {
+      var placeholder = instance[methodName];
+
+      var methodNameCaps = methodName.charAt(0).toUpperCase() + methodName.slice(1);
+
+      instance[methodName] = function() {
+        instance.trigger('before' + methodNameCaps);
+
+        var result = placeholder.apply(instance, arguments);
+
+        instance.trigger('after' + methodNameCaps, result);
+
+        return result;
+      };
+    }.bind(instance));
 
     this.init.apply(instance, arguments);
 
