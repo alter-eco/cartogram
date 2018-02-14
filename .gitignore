@@ -1,4 +1,6 @@
-dist/
+dist/*
+!dist/d3-cartogram.js
+
 index.html
 
 # Logs

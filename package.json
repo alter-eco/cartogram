@@ -17,6 +17,6 @@
     "browserify": "^15.2.0"
   },
   "dependencies": {
-    "@alter-eco/choropleth": "^0.0.5"
+    "@alter-eco/choropleth": "0.0.8"
   }
 }
