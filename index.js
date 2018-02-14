@@ -39,11 +39,23 @@ module.exports = Cartogram = {
   },
 
   prototype: Object.assign(Choropleth.prototype, {
+    fill: function(datum) {
+      if (datum.properties) {
+        var geoKey = datum.properties[this.geoIdKey];
+
+        if (this.dataById.hasOwnProperty(geoKey)) {
+          return this.scale(this.dataById[geoKey][this.valueColumn]);
+        }
+      }
+
+      return this.config.neutralColor;
+    },
+
     draw: function() {
       var projection = d3.geoMercator()
         .center([2.2, 46.2])
         .scale(1500)
-        .translate([this.width / 2, this.height / 2]);
+        .translate([this.drawWidth / 2, this.drawHeight / 2]);
 
       var path = d3.geoPath()
         .projection(projection);
