@@ -97,16 +97,16 @@ module.exports = Cartogram = {
         .append('path')
         .attr('d', carto.path)
         .attr('class', 'region')
-        .attr('id', function(d) {
-          return d.geometry.properties.nom;
+        .attr('id', function(datum) {
+          return datum.geometry.properties.nom;
         })
         .attr('fill', this.fill.bind(this))
-        .on('mouseover', function(d) {
-          if (!this.tooltip) {
+        .on('mouseover', function(datum) {
+          if (!this.tooltip || !datum.properties) {
             return false;
           }
 
-          var tooltipData = this.dataById[d.properties[this.geoIdKey]];
+          var tooltipData = this.dataById[datum.properties[this.geoIdKey]];
 
           if (!tooltipData || tooltipData[this.selected] === '') {
             return false;
