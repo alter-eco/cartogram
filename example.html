@@ -24,28 +24,28 @@
 
     <script>
       var data = [{
-        code: '974',
+        ISO3: 'DNK',
         value: 50
       }, {
-        code: '77',
+        ISO3: 'ESP',
         value: 50
       }, {
-        code: '64',
+        ISO3: 'POR',
         value: 60
       }, {
-        code: '69',
+        ISO3: 'GBR',
         value: 10
       }, {
-        code: '29',
-        value: 300
+        ISO3: 'FRA',
+        value: 30
       }];
 
       var carto = Cartogram.create({
         elem: '#container',
-        map: 'france-departements',
+        map: 'european-union',
         data: data,
         legend: true,
-        sensibility: 5,
+        sensibility: 90,
         scale: {
           type: 'linear',
           minColor: '#FFE25A',

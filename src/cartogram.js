@@ -50,7 +50,7 @@ export class Cartogram extends Choropleth {
       .properties(d => {
         return this.dataById[d.properties[this.geoIdKey]];
       })
-      .iterations(this.config.iterations);
+      .iterations(this.config.sensibility);
 
     this.geometries = this.topojson.objects[Object.keys(this.topojson.objects)[0]].geometries;
 
