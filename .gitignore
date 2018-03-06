@@ -1,5 +1,5 @@
-dist/*
-!dist/d3-cartogram.js
+dist/
+es6
 
 index.html
 

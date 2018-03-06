@@ -1,23 +1,52 @@
 {
   "name": "@alter-eco/cartogram",
   "version": "0.0.7",
-  "description": "",
-  "main": "index.js",
+  "description": "A cartogram function used for building warped maps, made with D3",
+  "main": "dist/main.js",
+  "module": "es6/cartogram.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "build": "browserify index.js -s Cartogram -o dist/main.js"
+    "clean": "rm -rf ./dist/* && rm -rf ./es6",
+    "development": "npm run clean && rollup -c --watch",
+    "build": "npm run clean && rollup -c && babel src --out-dir es6",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:alter-eco/cartogram.git"
   },
   "author": "laurencedorman",
-  "license": "ISC",
+  "license": "GPL-3.0",
+  "keywords": [
+    "d3",
+    "France",
+    "cartography",
+    "map",
+    "cartogram",
+    "anamorphose"
+  ],
   "devDependencies": {
-    "browserify": "^16.1.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.2",
+    "eslint-config-idiomatic": "^4.0.0",
+    "eslint-plugin-script-tags": "^0.5.0",
+    "rollup": "^0.56.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.4.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "@alter-eco/choropleth": "0.0.9",
-    "eventablejs": "^1.0.5"
+    "@alter-eco/choropleth": "^0.1.3",
+    "d3-array": "^1.2.1",
+    "d3-cartogram": "git+https://git@github.com/alter-eco/topogram.git",
+    "d3-geo": "^1.9.1",
+    "d3-scale": "^2.0.0"
   }
 }
