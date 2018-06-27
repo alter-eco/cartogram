@@ -1,6 +1,6 @@
 {
   "name": "@alter-eco/cartogram",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A cartogram function used for building warped maps, made with D3",
   "main": "dist/main.js",
   "module": "es6/cartogram.js",
