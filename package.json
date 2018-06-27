@@ -43,7 +43,7 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "@alter-eco/choropleth": "^0.1.3",
+    "@alter-eco/choropleth": "^0.1.7",
     "d3-array": "^1.2.1",
     "d3-cartogram": "git+https://git@github.com/alter-eco/topogram.git",
     "d3-geo": "^1.9.1",
